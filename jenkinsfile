@@ -32,7 +32,6 @@ pipeline {
     }
    stage('Run Docker Container') {
    steps {
-     sh 'docker rm -v $(docker ps -a -q -f status=exited)'
      sh 'docker run -dti --name project -p 8761:8761 anudeepb9/create:docker'
    }
   }
